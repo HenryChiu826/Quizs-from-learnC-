@@ -1,0 +1,136 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void quiz553();
+void quiz554();
+void quiz62();
+
+void quiz63()
+{
+    int array[] {4,6,7,3,8,2,1,9,5};
+    for (int num = 0; num < (sizeof(array)/ sizeof(array[1]) ); num++)
+    {
+        cout << array[num];
+    }
+    cout << "Input number between 1-9: ";
+    int userInput;
+    cin >> userInput;
+    if (cin.fail())
+    {
+        cin.clear(); // reset any error flags
+        cin.ignore(32767, '\n'); // ignore any characters in the input buffer
+    }
+    while (userInput > 9 || userInput < 1)
+    {
+        cout << "Invalid number entered.";
+        cin >> userInput;
+    }
+    int theIndex = 0;
+    for (int num = 0; num < (sizeof(array)/ sizeof(array[1]) ); num++)
+    {
+        if (userInput == array[num])
+        {
+            theIndex = num;
+            cout << "The index of your number is " << theIndex;
+            return;
+        }
+    }
+}
+namespace Animal
+    {
+        enum Animal
+        {
+            CHICKEN,
+            DOG,
+            CAT,
+            ELEPHANT,
+            DUCK,
+            SNAKE,
+            MAX_ANIMALS
+        };
+    }
+
+void quiz64()
+{
+    int arrayTest[6]{3,6,2,5,4,1};
+
+    for(int index = 0; index < 6; index++)
+    {
+
+    }
+
+
+}
+
+int main()
+{
+    quiz64();
+}
+
+void quiz62()
+{
+    double highestTemp[365]{};
+    cout << highestTemp[2];
+
+
+    int numOfLegs[Animal::MAX_ANIMALS] = {2,2,4,4,0};
+    cout << numOfLegs[Animal::ELEPHANT];
+}
+
+void quiz554()
+{
+    int i = 1;
+    while (i <= 5)
+    {
+        int j = 5;
+        while (j > 0)
+        {
+            if(j <= i)
+                cout << j;
+            else
+                cout << ' ';
+
+            --j;
+        }
+        cout << '\n';
+        ++i;
+    }
+}
+void quiz55inverse()
+{
+    int i = 1;
+
+    while (i <= 5)
+    {
+        int j = 1;
+
+        for(int z = 0; z < 4-i+j; z++)
+            cout << ' ';
+        while (j <= i)
+       {
+           cout << j;
+           ++j;
+       }
+       cout << '\n';
+       ++i;
+    }
+}
+
+void quiz553()
+{
+    int outer = 5;
+
+    while (outer >= 1)
+    {
+        signed int inner = outer;
+
+        while (inner <= outer && inner > 0)
+        {
+            cout << inner-- << ' ';
+        }
+        cout << "\n";
+        --outer;
+    }
+}
